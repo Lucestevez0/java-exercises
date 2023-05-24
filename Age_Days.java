@@ -19,7 +19,7 @@ public class Age_Days {
     }
 
     private static int transform(int[] year, int days) {
-        int a = 30, b = 31;
+
         days += year[2];
         days += year[0] * 365;
         for (int i = 1; i <= year[1]; i++) {

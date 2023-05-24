@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class AverageArit_Numbers {
     public static void main(String[] args) {
-        char decide = 0;
+
         double[] array = new double[100];
 
         System.out.println("Média Aritimética: " + calculator(array));

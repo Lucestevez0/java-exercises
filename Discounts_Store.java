@@ -11,7 +11,7 @@ public class Discounts_Store {
         df.applyPattern("R$#,##0.00");
 
         System.out.print("Informe o valor da compra: ");
-        double valueS = sc.nextDouble(); double valueF = 0;
+        double valueS = sc.nextDouble(); double valueF;
         if(valueS < 500){
              valueF = valueS;
             System.out.println("Valor Final: "+df.format(valueF));

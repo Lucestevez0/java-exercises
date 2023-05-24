@@ -29,11 +29,10 @@ public class Baskara {
             }
         }
     }
-    public static double[] formula(double a, double b, double delta, double[] x){
+    public static void formula(double a, double b, double delta, double[] x){
 
                  x[0] = (-b + Math.sqrt(delta)) / (2 * a);
                  x[1] = (-b - Math.sqrt(delta)) / (2 * a);
 
-        return x;
     }
 }

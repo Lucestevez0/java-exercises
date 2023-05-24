@@ -17,7 +17,7 @@ public class Calculo_Geometria {
     private static void figure(Scanner sc, int idFigure) {
         String verify; double[] array = new double[2];
         DecimalFormat df = new DecimalFormat("0.00");
-        int id = 0;
+        int id;
         if(idFigure > 2 || idFigure < 1) {
             System.out.println("Figura informada não existente, tente novamente");
         }else if(idFigure == 1){
@@ -51,7 +51,7 @@ public class Calculo_Geometria {
     private static boolean verifySN(String verify) {
         return verify.equals("Sim") || verify.equals("sim");
     }
-    public static double[] calculateFLat(int id,Scanner sc, double[] array) {
+    public static void calculateFLat(int id, Scanner sc, double[] array) {
         double A , P; String verify;
         if (id == 1){
             System.out.print("Informe o valor do lado: ");
@@ -108,55 +108,60 @@ public class Calculo_Geometria {
             System.out.print("Informe a altura: ");
             double h = sc.nextDouble();
             A = b * h; P = 2 * (b + h); array[0] = A; array[1] = P;
-        } else if (id == 4) {
-            System.out.print("Tem a base Maior e Menor: ");
-            verify = sc.next();
-            if(verifySN(verify)){
-                System.out.print("Informe a base maior: ");
-                double B = sc.nextDouble();
-                System.out.print("Informe a base menor: ");
-                double b = sc.nextDouble();
-                System.out.print("Informe a altura: ");
-                double h = sc.nextDouble();
-                A = (B + b) * h / 2;
-                System.out.print("Informe o lado 1: ");
-                double l1 = sc.nextDouble();
-                System.out.print("Informe a lado 2: ");
-                double l2 = sc.nextDouble();
-                P = B + b + l1 + l2;
-            }else {
-                System.out.print("Informe a base média: ");
-                double bm = sc.nextDouble();
-                System.out.print("Informe a base existente: ");
-                double b = sc.nextDouble();
-                double B = bm * 2 /b;
-                System.out.print("Informe a altura: ");
-                double h = sc.nextDouble();
-                A = (B + b) * h / 2;
-                System.out.print("Informe o lado 1: ");
-                double l1 = sc.nextDouble();
-                System.out.print("Informe a lado 2: ");
-                double l2 = sc.nextDouble();
-                P = B + b + l1 + l2;
-            } array[0] = A; array[1] = P;
-        } else if (id == 5) {
-            System.out.print("Informe a diagonal maior: ");
-            double D = sc.nextDouble();
-            System.out.print("Informe a diagonal menor: ");
-            double d = sc.nextDouble();
-            A = D * d / 2;
-            System.out.print("Informe o valor do lado: ");
-            double l = sc.nextDouble();
-            P = 4 * l; array[0] = A; array[1] = P;
-        }else{
-            System.out.print("Informe o raio: ");
-            double ray = sc.nextDouble();
-            A = 3.14 * Math.pow(ray,2); P = 2 * 3.14 * ray; array[0] = A; array[1] = P;
+        } else {
+            if (id == 4) {
+                System.out.print("Tem a base Maior e Menor: ");
+                verify = sc.next();
+                if(verifySN(verify)){
+                    System.out.print("Informe a base maior: ");
+                    double B = sc.nextDouble();
+                    System.out.print("Informe a base menor: ");
+                    double b = sc.nextDouble();
+                    System.out.print("Informe a altura: ");
+                    double h = sc.nextDouble();
+                    A = (B + b) * h / 2;
+                    System.out.print("Informe o lado 1: ");
+                    double l1 = sc.nextDouble();
+                    System.out.print("Informe a lado 2: ");
+                    double l2 = sc.nextDouble();
+                    P = B + b + l1 + l2;
+                }else {
+                    System.out.print("Informe a base média: ");
+                    double bm = sc.nextDouble();
+                    System.out.print("Informe a base existente: ");
+                    double b = sc.nextDouble();
+                    double B = bm * 2 /b;
+                    System.out.print("Informe a altura: ");
+                    double h = sc.nextDouble();
+                    A = (B + b) * h / 2;
+                    System.out.print("Informe o lado 1: ");
+                    double l1 = sc.nextDouble();
+                    System.out.print("Informe a lado 2: ");
+                    double l2 = sc.nextDouble();
+                    P = B + b + l1 + l2;
+                }
+            } else {
+                if (id == 5) {
+                    System.out.print("Informe a diagonal maior: ");
+                    double D = sc.nextDouble();
+                    System.out.print("Informe a diagonal menor: ");
+                    double d = sc.nextDouble();
+                    A = D * d / 2;
+                    System.out.print("Informe o valor do lado: ");
+                    double l = sc.nextDouble();
+                    P = 4 * l;
+                }else{
+                    System.out.print("Informe o raio: ");
+                    double ray = sc.nextDouble();
+                    A = 3.14 * Math.pow(ray,2); P = 2 * 3.14 * ray;
+                }
+            }
+            array[0] = A;
+            array[1] = P;
         }
-        return array;
     }
-    public static double[] calculateSpatial(int id, String verify,Scanner sc, double[] array){
-        double A = 0, P = 0, V = 0;
+    public static void calculateSpatial(int id, String verify, Scanner sc, double[] array){
+        double A, V ;
         if(verifySN(verify)){
             if(id == 1){
                 System.out.print("Informe o valor do lado: ");
@@ -241,7 +246,6 @@ public class Calculo_Geometria {
 
         }
         array[0] = A; array[1] = V;
-        return array;
     }
     private static double getBase(Scanner sc, int idBase) {
         double Ab = 0;

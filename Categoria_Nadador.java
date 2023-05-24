@@ -11,10 +11,11 @@ public class Categoria_Nadador {
         String category = "";
         System.out.println("---Categoria---");
         System.out.println("Idade: "+age);
-        System.out.println("Categoria: "+viewCategory(age,category));
+        System.out.println("Categoria: "+viewCategory(age));
     }
 
-    private static String viewCategory(int age, String category) {
+    private static String viewCategory(int age) {
+        String category;
         if(age >= 5 && age <= 7){
             category = "Infantil A";
         }else if(age >= 8 && age <= 10){

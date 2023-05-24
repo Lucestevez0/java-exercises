@@ -16,9 +16,8 @@ public class Factory_Time {
         System.out.println("Segundos: "+sec);
     }
 
-    private static double[] getFormatTime(int sec, double[] format) {
+    private static void getFormatTime(int sec, double[] format) {
         format[0] = (double) sec / 60;
         format [1] = (double) sec / 3600;
-        return format;
     }
 }

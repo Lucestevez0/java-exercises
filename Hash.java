@@ -3,8 +3,7 @@ package JavaExercises;
 import java.util.*;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+
 
 public class Hash {
     static String nameplayer1,nameplayer2;
@@ -67,84 +66,39 @@ public class Hash {
         originalcolorbackground = button1.getBackground();
         button1.setFont(new Font("Arial",Font.PLAIN,80));
         buttonspanel.add(button1);
-        button1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                executionmove(button1, 0,0);
-            }
-        });
+        button1.addActionListener(e -> executionmove(button1, 0,0));
         button2 = new JButton();
         button2.setFont(new Font("Arial",Font.PLAIN,80));
         buttonspanel.add(button2);
-        button2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                executionmove(button2, 0,1);
-            }
-        });
+        button2.addActionListener(e -> executionmove(button2, 0,1));
         button3 = new JButton();
         button3.setFont(new Font("Arial",Font.PLAIN,80));
         buttonspanel.add(button3);
-        button3.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                executionmove(button3, 0,2);
-            }
-        });
+        button3.addActionListener(e -> executionmove(button3, 0,2));
         button4 = new JButton();
         button4.setFont(new Font("Arial",Font.PLAIN,80));
         buttonspanel.add(button4);
-        button4.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                executionmove(button4, 1,0);
-            }
-        });
+        button4.addActionListener(e -> executionmove(button4, 1,0));
         button5 = new JButton();
         button5.setFont(new Font("Arial",Font.PLAIN,80));
         buttonspanel.add(button5);
-        button5.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                executionmove(button5, 1,1);
-            }
-        });
+        button5.addActionListener(e -> executionmove(button5, 1,1));
         button6 = new JButton();
         button6.setFont(new Font("Arial",Font.PLAIN,80));
         buttonspanel.add(button6);
-        button6.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                executionmove(button6, 1,2);
-            }
-        });
+        button6.addActionListener(e -> executionmove(button6, 1,2));
         button7 = new JButton();
         button7.setFont(new Font("Arial",Font.PLAIN,80));
         buttonspanel.add(button7);
-        button7.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                executionmove(button7, 2,0);
-            }
-        });
+        button7.addActionListener(e -> executionmove(button7, 2,0));
         button8 = new JButton();
         button8.setFont(new Font("Arial",Font.PLAIN,80));
         buttonspanel.add(button8);
-        button8.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                executionmove(button8, 2,1);
-            }
-        });
+        button8.addActionListener(e -> executionmove(button8, 2,1));
         button9 = new JButton();
         button9.setFont(new Font("Arial",Font.PLAIN,80));
         buttonspanel.add(button9);
-        button9.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                executionmove(button9, 2,2);
-            }
-        });
+        button9.addActionListener(e -> executionmove(button9, 2,2));
 
     }
     public static void executionmove(JButton button , int i, int j){
@@ -173,7 +127,7 @@ public class Hash {
            if (letterplayeratual.equals("X")){
                letterplayeratual = "O";
                if(cpu){
-                   automaticmove();
+                   automaticMove();
                }else {
                    labelinformations.setText("Jogada Atual: " + nameplayer2 + " (X)");
                }
@@ -182,7 +136,7 @@ public class Hash {
                labelinformations.setText("Jogada Atual: "+nameplayer1+ " (O)");
            }
     }
-    private static void automaticmove() {
+    private static void automaticMove() {
 
         if (level == 0) {//level = Easy
             aleatorymove();
@@ -352,16 +306,14 @@ public class Hash {
                 return true;
             else if (letterturnplayer.equals(plays[0][2]) && letterturnplayer.equals(plays[1][2]))
                 return true;
-            else if (letterturnplayer.equals(plays[0][0]) && letterturnplayer.equals(plays[1][1]))
-                return true;
+            else return letterturnplayer.equals(plays[0][0]) && letterturnplayer.equals(plays[1][1]);
         return false;
     }
     private static boolean moveposicion8(String letterturnplayer) {
         if(plays[2][1] == null)
             if (letterturnplayer.equals(plays[2][0]) && letterturnplayer.equals(plays[2][2]))
                 return true;
-            else if (letterturnplayer.equals(plays[0][1]) && letterturnplayer.equals(plays[1][1]))
-                return true;
+            else return letterturnplayer.equals(plays[0][1]) && letterturnplayer.equals(plays[1][1]);
         return false;
     }
     private static boolean moveposicion7(String letterturnplayer) {
@@ -370,16 +322,14 @@ public class Hash {
                 return true;
             else if (letterturnplayer.equals(plays[0][0]) && letterturnplayer.equals(plays[1][0]))
                 return true;
-            else if (letterturnplayer.equals(plays[0][2]) && letterturnplayer.equals(plays[1][1]))
-                return true;
+            else return letterturnplayer.equals(plays[0][2]) && letterturnplayer.equals(plays[1][1]);
         return false;
     }
     private static boolean moveposicion6(String letterturnplayer) {
         if(plays[1][2] == null)
             if (letterturnplayer.equals(plays[1][0]) && letterturnplayer.equals(plays[1][1]))
                 return true;
-            else if (letterturnplayer.equals(plays[0][2]) && letterturnplayer.equals(plays[2][2]))
-                return true;
+            else return letterturnplayer.equals(plays[0][2]) && letterturnplayer.equals(plays[2][2]);
         return false;
     }
     private static boolean moveposicion5(String letterturnplayer) {
@@ -390,16 +340,14 @@ public class Hash {
                 return true;
             else if (letterturnplayer.equals(plays[0][0]) && letterturnplayer.equals(plays[2][2]))
                 return true;
-            else if (letterturnplayer.equals(plays[0][2]) && letterturnplayer.equals(plays[2][0]))
-                return true;
+            else return letterturnplayer.equals(plays[0][2]) && letterturnplayer.equals(plays[2][0]);
         return false;
     }
     private static boolean moveposicion4(String letterturnplayer) {
         if(plays[1][0] == null)
             if (letterturnplayer.equals(plays[1][1]) && letterturnplayer.equals(plays[1][2]))
                 return true;
-            else if (letterturnplayer.equals(plays[0][0]) && letterturnplayer.equals(plays[2][0]))
-                return true;
+            else return letterturnplayer.equals(plays[0][0]) && letterturnplayer.equals(plays[2][0]);
         return false;
     }
     private static boolean moveposicion3(String letterturnplayer) {
@@ -408,16 +356,14 @@ public class Hash {
                 return true;
             else if (letterturnplayer.equals(plays[1][2]) && letterturnplayer.equals(plays[2][2]))
                 return true;
-            else if (letterturnplayer.equals(plays[1][1]) && letterturnplayer.equals(plays[2][0]))
-                return true;
+            else return letterturnplayer.equals(plays[1][1]) && letterturnplayer.equals(plays[2][0]);
         return false;
     }
     private static boolean moveposicion2(String letterturnplayer) {
         if (plays [0][1] == null)
             if (letterturnplayer.equals(plays[0][0]) && letterturnplayer.equals(plays[0][2]))
                 return true;
-            else if(letterturnplayer.equals(plays[1][1] )&& letterturnplayer.equals(plays[2][1]))
-                return true;
+            else return letterturnplayer.equals(plays[1][1]) && letterturnplayer.equals(plays[2][1]);
         return false;
     }
     private static boolean moveposicion1(String letterturnplayer) {
@@ -426,8 +372,7 @@ public class Hash {
                 return true;
             else if (letterturnplayer.equals(plays[1][0]) && letterturnplayer.equals(plays[2][0]))
                 return true;
-            else if (letterturnplayer.equals(plays[1][1]) && letterturnplayer.equals(plays[2][2]))
-                return true;
+            else return letterturnplayer.equals(plays[1][1]) && letterturnplayer.equals(plays[2][2]);
 
         return false;
     }
