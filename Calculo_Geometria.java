@@ -248,7 +248,7 @@ public class Calculo_Geometria {
         array[0] = A; array[1] = V;
     }
     private static double getBase(Scanner sc, int idBase) {
-        double Ab = 0;
+        double Ab;
         if (idBase == 1){
             System.out.print("Informe o valor da base: ");
             double b = sc.nextDouble();

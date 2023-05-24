@@ -8,7 +8,6 @@ public class Categoria_Nadador {
 
         System.out.print("Informe a idade do nadador: ");
         int age = sc.nextInt();
-        String category = "";
         System.out.println("---Categoria---");
         System.out.println("Idade: "+age);
         System.out.println("Categoria: "+viewCategory(age));
