@@ -1,12 +1,11 @@
 package JavaExercises;
 
-import java.text.DecimalFormat;
+
 import java.util.Scanner;
 
 public class Baskara {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        DecimalFormat df = new DecimalFormat("0.00");
 
         System.out.print("Informe o valor de A: ");
         double a = sc.nextDouble();
