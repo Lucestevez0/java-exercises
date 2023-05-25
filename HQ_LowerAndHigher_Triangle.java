@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class HQ_LowerAndHigher_Triangle {
     public static void main(String[] args) {
-        int[][] hq1 = new int[8][8]; int[][] hq2 = new int[8][8]; int x = 1;
+        int[][] hq1 = new int[8][8]; int[][] hq2 = new int[8][8];
 
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j <= i; j++) {
