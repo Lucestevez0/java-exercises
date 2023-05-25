@@ -3,7 +3,7 @@ package JavaExercises;
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
-public class Calculo_Geometria {
+public class Geometry_Calculator {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 

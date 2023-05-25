@@ -2,7 +2,7 @@ package JavaExercises;
 
 import java.util.Scanner;
 
-public class Categoria_Nadador {
+public class Swimmer_Category {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
