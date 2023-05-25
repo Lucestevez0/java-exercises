@@ -2,7 +2,7 @@ package JavaExercises;
 
 import java.util.Scanner;
 
-public class Par_Impar {
+public class Even_Odd {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
